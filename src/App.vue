@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer app clipped floating v-model="showDrawer">
+    <v-navigation-drawer app clipped floating v-model="showDrawer" width="250">
       <v-list>
         <v-list-tile v-for="item in navigationItems" :key="item.title" :to="item.to">
           <v-list-tile-action><v-icon>{{ item.icon }}</v-icon></v-list-tile-action>
@@ -15,8 +15,9 @@
       <v-btn icon><v-icon>refresh</v-icon></v-btn>
       <v-btn icon><v-icon>notifications</v-icon></v-btn>
       <v-btn icon><v-icon>settings</v-icon></v-btn>
-      <v-btn icon><v-icon>mood</v-icon></v-btn>
+      <v-btn icon><v-icon @click="openFeedback">mood</v-icon></v-btn>
     </v-toolbar>
+    <Feedback/>
     <v-content>
       <v-container fluid>
         <router-view></router-view>
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Feedback from '@/components/Feedback.vue'
 
 export default {
@@ -43,6 +45,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'openFeedback'
+    ])
   }
 }
 </script>
