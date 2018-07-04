@@ -1,2 +1,4 @@
+export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'
+
 export const OPEN_FEEDBACK = 'OPEN_FEEDBACK'
 export const CLOSE_FEEDBACK = 'CLOSE_FEEDBACK'

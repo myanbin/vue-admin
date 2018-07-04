@@ -1,7 +1,7 @@
 <template>
   <v-dialog persistent v-model="feedback" width="600">
     <v-card>
-      <v-card-title class="headline">告诉我们你的使用感受</v-card-title>
+      <v-card-title class="headline">告诉我们您的使用感受</v-card-title>
       <v-card-text>
         <v-container fluid>
           <v-radio-group v-model="mood" row>
@@ -22,6 +22,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+
 export default {
   name: 'Feedback',
   data () {
@@ -42,6 +43,7 @@ export default {
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
 </style>
