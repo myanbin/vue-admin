@@ -1,21 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/home/index.vue'
-import About from '../views/about/index.vue'
+import App from '../views/index'
 
 Vue.use(Router)
+
+const appRoutes = [
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('../views/home')
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/about')
+  }
+]
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/login')
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '',
+      component: App,
+      beforeEnter: (to, from, next) => {
+        next('/login')
+      },
+      children: appRoutes
     }
   ]
 })

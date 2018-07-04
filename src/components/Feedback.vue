@@ -3,18 +3,16 @@
     <v-card>
       <v-card-title class="headline">告诉我们您的使用感受</v-card-title>
       <v-card-text>
-        <v-container fluid>
-          <v-radio-group v-model="mood" row>
-            <v-radio label="感觉良好" value="happy" ></v-radio>
-            <v-radio label="差强人意" value="unhappy"></v-radio>
-          </v-radio-group>
-          <v-textarea solo label="告诉我们原因"></v-textarea>
-        </v-container>
+        <v-radio-group v-model="mood" row>
+          <v-radio label="感觉良好" value="happy"></v-radio>
+          <v-radio label="差强人意" value="unhappy"></v-radio>
+        </v-radio-group>
+        <v-textarea solo label="告诉我们原因"></v-textarea>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" flat @click="closeFeedback">取消</v-btn>
-        <v-btn color="blue darken-1" flat @click="closeFeedback">提交</v-btn>
+        <v-btn flat color="blue darken-1" @click="closeFeedback">取消</v-btn>
+        <v-btn flat color="blue darken-1" @click="closeFeedback">提交</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -24,7 +22,7 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'Feedback',
+  name: 'feedback',
   data () {
     return {
       mood: 'happy'
@@ -43,7 +41,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
 </style>

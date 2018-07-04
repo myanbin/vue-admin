@@ -13,7 +13,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'Sidebar',
+  name: 'sidebar',
   data () {
     return {
       navigationItems: [

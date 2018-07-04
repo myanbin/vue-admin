@@ -17,7 +17,7 @@ import Feedback from '@/components/Feedback'
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Headbar',
+  name: 'headbar',
   components: {
     Feedback
   },
